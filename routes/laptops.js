@@ -101,7 +101,7 @@ router.post("/", auth, async(req,res) => {
   }
   try{
     let laptop = new laptopsModel(req.body);
-    // A
+    // Add the sign in user id to the new laptop
     laptop.user_id = req.tokenData._id;
     await laptop.save();
     res.status(201).json(laptop)

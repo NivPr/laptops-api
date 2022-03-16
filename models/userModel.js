@@ -26,7 +26,6 @@ exports.genToken = (_id) => {
 exports.validateUser = (_reqBody) => {
   let joiSchema = Joi.object({
     name:Joi.string().min(2).max(100).required(),
-    // email - בודק תקינות האמיילי
     email:Joi.string().min(2).max(150).email().required(),
     password:Joi.string().min(3).max(100).required(),
    
